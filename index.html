@@ -68,6 +68,7 @@
       margin-right: 6px;
       margin-bottom: 4px;
       font-weight: 500;
+      cursor: pointer;
     }
     .ext-link {
       color: #1a7f37;
@@ -173,16 +174,14 @@
           <td>網路行銷</td>
           <td>線上考試 (30 題抽 20 題)</td>
           <td>
-            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch01.pdf')">📄 ch01.pdf</a>
-            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch02.pdf')">📄 ch02.pdf</a>
-            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch03.pdf')">📄 ch03.pdf</a>
+            <a class="file-link" onclick="loadPdf('./網路行銷.pdf')">📄 網路行銷.pdf</a>
           </td>
         </tr>
         <tr>
           <td class="badge-date">11/7 (六)</td>
           <td>空運物流作業管理</td>
           <td>Openbook 抽考題庫</td>
-          <td><a class="file-link" href="javascript:void(0)" onclick="loadPdf('./空運物流作業管理 期中考題庫與答案.pdf')">📄 空運物流作業管理 期中考題庫與答案.pdf</a></td>
+          <td><a class="file-link" onclick="loadPdf('./空運物流作業管理 期中考題庫與答案.pdf')">📄 空運物流作業管理 期中考題庫與答案.pdf</a></td>
         </tr>
         <tr>
           <td class="badge-date">11/7 (六)</td>
@@ -194,7 +193,7 @@
           <td class="badge-date">11/7 (六)</td>
           <td>通關實務</td>
           <td>Openbook 抽考題庫</td>
-          <td><a class="file-link" href="javascript:void(0)" onclick="loadPdf('./通關實務期中考題庫與答案.pdf')">📄 通關實務期中考題庫與答案.pdf</a></td>
+          <td><a class="file-link" onclick="loadPdf('./通關實務期中考題庫與答案.pdf')">📄 通關實務期中考題庫與答案.pdf</a></td>
         </tr>
         <tr>
           <td class="badge-date">11/7 (六)</td>
@@ -217,9 +216,7 @@
     <div class="selector-bar">
       <label for="pdfSelect"><strong>選擇切換檔案：</strong></label>
       <select id="pdfSelect" onchange="loadPdf(this.value)">
-        <option value="./ch01.pdf">網路行銷 - ch01.pdf</option>
-        <option value="./ch02.pdf">網路行銷 - ch02.pdf</option>
-        <option value="./ch03.pdf">網路行銷 - ch03.pdf</option>
+        <option value="./網路行銷.pdf">網路行銷.pdf</option>
         <option value="./空運物流作業管理 期中考題庫與答案.pdf">空運物流作業管理 期中考題庫與答案.pdf</option>
         <option value="./通關實務期中考題庫與答案.pdf">通關實務期中考題庫與答案.pdf</option>
       </select>
@@ -279,8 +276,9 @@
     });
   }
 
+  // 預設直接載入網路行銷題庫
   window.onload = function() {
-    loadPdf('./ch01.pdf');
+    loadPdf('./網路行銷.pdf');
   };
 </script>
 

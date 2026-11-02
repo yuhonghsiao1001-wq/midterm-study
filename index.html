@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>期中考作業與題庫整理</title>
+  <!-- 引入 PDF.js 核心庫，防止手機觸發 Google Drive App -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -14,52 +16,46 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: #f6f8fa;
       color: #24292f;
-      padding: 30px 15px;
+      padding: 20px 10px;
       line-height: 1.5;
     }
     .container {
       max-width: 1000px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 25px 30px;
+      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
+      font-size: 22px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
       border-bottom: 2px solid #eaeaea;
       color: #0969da;
     }
     h2 {
-      font-size: 18px;
-      margin: 25px 0 12px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 17px;
+      margin: 20px 0 10px 0;
     }
-    /* 表格樣式 */
     .table-wrapper {
       overflow-x: auto;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 14px;
+      font-size: 13px;
       text-align: left;
     }
     th, td {
-      padding: 12px 14px;
+      padding: 10px;
       border: 1px solid #d0d7de;
     }
     th {
       background-color: #f6f8fa;
       font-weight: 600;
-    }
-    tr:hover {
-      background-color: #f8fafc;
+      white-space: nowrap;
     }
     .badge-date {
       font-weight: 600;
@@ -73,46 +69,56 @@
       margin-bottom: 4px;
       font-weight: 500;
     }
-    .file-link:hover {
-      text-decoration: underline;
-    }
     .ext-link {
       color: #1a7f37;
       text-decoration: none;
       word-break: break-all;
     }
-    .ext-link:hover {
-      text-decoration: underline;
-    }
-    /* PDF 預覽區 */
+    /* 預覽區塊樣式 */
     .preview-card {
-      background-color: #ffffff;
       border: 1px solid #d0d7de;
       border-radius: 8px;
-      padding: 20px;
+      padding: 15px;
+      background: #fafbfc;
     }
     .selector-bar {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 6px;
     }
     select {
-      padding: 8px 12px;
-      font-size: 15px;
+      padding: 8px 10px;
+      font-size: 14px;
       border-radius: 6px;
       border: 1px solid #d0d7de;
       background: #fff;
-      cursor: pointer;
-      min-width: 320px;
-    }
-    iframe {
       width: 100%;
-      height: 700px;
+    }
+    .loading-tip {
+      text-align: center;
+      padding: 10px;
+      color: #57606a;
+      font-size: 13px;
+      display: none;
+    }
+    /* PDF 繪製容器 */
+    #pdf-container {
+      width: 100%;
+      max-height: 75vh;
+      overflow-y: auto;
       border: 1px solid #d0d7de;
       border-radius: 6px;
       background: #525659;
+      text-align: center;
+      padding: 10px 0;
+    }
+    canvas {
+      max-width: 96%;
+      height: auto !important;
+      margin: 8px auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      display: block;
     }
   </style>
 </head>
@@ -156,17 +162,17 @@
           <td>網路行銷</td>
           <td>線上考試 (30 題抽 20 題)</td>
           <td>
-            <a class="file-link" href="./answer.pdf" target="_blank">📄 考試答案 (answer.pdf)</a><br>
-            <a class="file-link" href="./ch01.pdf" target="_blank">📄 ch01.pdf</a>
-            <a class="file-link" href="./ch02.pdf" target="_blank">📄 ch02.pdf</a>
-            <a class="file-link" href="./ch03.pdf" target="_blank">📄 ch03.pdf</a>
+            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./answer.pdf')">📄 考試答案 (answer.pdf)</a><br>
+            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch01.pdf')">📄 ch01.pdf</a>
+            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch02.pdf')">📄 ch02.pdf</a>
+            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch03.pdf')">📄 ch03.pdf</a>
           </td>
         </tr>
         <tr>
           <td class="badge-date">11/7 (六)</td>
           <td>空運物流作業管理</td>
           <td>Openbook 抽考題庫</td>
-          <td><a class="file-link" href="./空運物流作業管理 期中考題庫與答案.pdf" target="_blank">📄 空運物流作業管理 期中考題庫與答案.pdf</a></td>
+          <td><a class="file-link" href="javascript:void(0)" onclick="loadPdf('./空運物流作業管理 期中考題庫與答案.pdf')">📄 空運物流作業管理 期中考題庫與答案.pdf</a></td>
         </tr>
         <tr>
           <td class="badge-date">11/7 (六)</td>
@@ -178,7 +184,7 @@
           <td class="badge-date">11/7 (六)</td>
           <td>通關實務</td>
           <td>Openbook 抽考題庫</td>
-          <td><a class="file-link" href="./通關實務期中考題庫與答案.pdf" target="_blank">📄 通關實務期中考題庫與答案.pdf</a></td>
+          <td><a class="file-link" href="javascript:void(0)" onclick="loadPdf('./通關實務期中考題庫與答案.pdf')">📄 通關實務期中考題庫與答案.pdf</a></td>
         </tr>
         <tr>
           <td class="badge-date">11/7 (六)</td>
@@ -196,11 +202,11 @@
     </table>
   </div>
 
-  <h2>📖 題庫與講義線上即時預覽</h2>
+  <h2>📖 題庫線上即時預覽（手機免跳轉）</h2>
   <div class="preview-card">
     <div class="selector-bar">
-      <label for="pdfSelect"><strong>切換預覽檔案：</strong></label>
-      <select id="pdfSelect" onchange="switchPdf(this.value)">
+      <label for="pdfSelect"><strong>選擇切換檔案：</strong></label>
+      <select id="pdfSelect" onchange="loadPdf(this.value)">
         <option value="./answer.pdf">網路行銷 - 考試答案 (answer.pdf)</option>
         <option value="./ch01.pdf">網路行銷 - ch01.pdf</option>
         <option value="./ch02.pdf">網路行銷 - ch02.pdf</option>
@@ -210,14 +216,67 @@
       </select>
     </div>
 
-    <iframe id="viewerFrame" src="./answer.pdf"></iframe>
+    <div id="loading" class="loading-tip">檔案載入中，請稍候...</div>
+    <div id="pdf-container"></div>
   </div>
 </div>
 
 <script>
-  function switchPdf(targetUrl) {
-    document.getElementById('viewerFrame').src = targetUrl;
+  // 設定 PDF.js worker
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  let currentLoadingTask = null;
+
+  function loadPdf(url) {
+    const container = document.getElementById('pdf-container');
+    const loading = document.getElementById('loading');
+    const select = document.getElementById('pdfSelect');
+
+    // 同步下拉選單的選項
+    if (select.value !== url) {
+      select.value = url;
+    }
+
+    loading.style.display = 'block';
+    container.innerHTML = '';
+
+    if (currentLoadingTask) {
+      currentLoadingTask.destroy();
+    }
+
+    currentLoadingTask = pdfjsLib.getDocument(url);
+
+    currentLoadingTask.promise.then(function(pdf) {
+      loading.style.display = 'none';
+
+      // 循序把每一頁渲染成圖片畫布
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        pdf.getPage(pageNum).then(function(page) {
+          const viewport = page.getViewport({ scale: 1.5 });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+
+          container.appendChild(canvas);
+          page.render(renderContext);
+        });
+      }
+    }).catch(function(error) {
+      loading.style.display = 'none';
+      container.innerHTML = '<p style="color: #fff; padding: 20px;">載入失敗，請確認檔案路徑是否正確。</p>';
+    });
   }
+
+  // 預設載入第一個題庫
+  window.onload = function() {
+    loadPdf('./answer.pdf');
+  };
 </script>
 
 </body>

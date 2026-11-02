@@ -73,6 +73,11 @@
       color: #1a7f37;
       text-decoration: none;
       word-break: break-all;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .ext-link:hover, .file-link:hover {
+      text-decoration: underline;
     }
     /* 預覽區塊樣式 */
     .preview-card {
@@ -154,8 +159,14 @@
         <tr>
           <td class="badge-date">11/6 (五)</td>
           <td>全球運籌管理</td>
-          <td>1. 線上考船期查詢</td>
-          <td><a class="ext-link" href="https://ss.shipmentlink.com/tvs2/" target="_blank">🔗 船期查詢系統 (ShipmentLink)</a></td>
+          <td>
+            1. 線上考船期查詢<br>
+            2. 啤酒遊戲 (Beer Game)
+          </td>
+          <td>
+            <a class="ext-link" href="https://ss.shipmentlink.com/tvs2/" target="_blank">🔗 船期查詢系統 (ShipmentLink)</a><br>
+            <a class="ext-link" href="https://beergame.masystem.se/" target="_blank">🔗 線上啤酒遊戲平台 (Beer Game)</a>
+          </td>
         </tr>
         <tr>
           <td class="badge-date">11/6 (五)</td>
@@ -222,7 +233,6 @@
 </div>
 
 <script>
-  // 設定 PDF.js worker
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
   let currentLoadingTask = null;
@@ -232,7 +242,6 @@
     const loading = document.getElementById('loading');
     const select = document.getElementById('pdfSelect');
 
-    // 同步下拉選單的選項
     if (select.value !== url) {
       select.value = url;
     }
@@ -249,7 +258,6 @@
     currentLoadingTask.promise.then(function(pdf) {
       loading.style.display = 'none';
 
-      // 循序把每一頁渲染成圖片畫布
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
         pdf.getPage(pageNum).then(function(page) {
           const viewport = page.getViewport({ scale: 1.5 });
@@ -273,7 +281,6 @@
     });
   }
 
-  // 預設載入第一個題庫
   window.onload = function() {
     loadPdf('./answer.pdf');
   };

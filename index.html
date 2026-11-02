@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>期中考作業與題庫整理</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f6f8fa;
+      color: #24292f;
+      padding: 30px 15px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #eaeaea;
+      color: #0969da;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 25px 0 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* 表格樣式 */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid #d0d7de;
+    }
+    th {
+      background-color: #f6f8fa;
+      font-weight: 600;
+    }
+    tr:hover {
+      background-color: #f8fafc;
+    }
+    .badge-date {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .file-link {
+      color: #0969da;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 6px;
+      font-weight: 500;
+    }
+    .file-link:hover {
+      text-decoration: underline;
+    }
+    .ext-link {
+      color: #1a7f37;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .ext-link:hover {
+      text-decoration: underline;
+    }
+    /* PDF 預覽區 */
+    .preview-card {
+      background-color: #ffffff;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .selector-bar {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    select {
+      padding: 8px 12px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1px solid #d0d7de;
+      background: #fff;
+      cursor: pointer;
+      min-width: 280px;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      background: #525659;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>📋 期中考各科作業、考試時程與題庫</h1>
+
+  <h2>📅 時程與檔案對照表</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>課堂</th>
+          <th>考試項目</th>
+          <th>檔案名稱 / 參考資源</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="badge-date">11/5 (四)</td>
+          <td>消費保護法規</td>
+          <td>讀書心得</td>
+          <td><a class="file-link" href="./借閱圖書心得寫作格式.docx" download>📥 借閱圖書心得寫作格式.docx</a></td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/5 (四)</td>
+          <td>勞動基準法規</td>
+          <td>讀書心得</td>
+          <td><a class="file-link" href="./借閱圖書心得寫作格式.docx" download>📥 借閱圖書心得寫作格式.docx</a></td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/6 (五)</td>
+          <td>全球運籌管理</td>
+          <td>1. 線上考船期查詢</td>
+          <td><a class="ext-link" href="https://ss.shipmentlink.com/tvs2/" target="_blank">🔗 船期查詢系統 (ShipmentLink)</a></td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/6 (五)</td>
+          <td>網路行銷</td>
+          <td>線上考試 (30 題抽 20 題)</td>
+          <td>
+            <a class="file-link" href="./ch01.pdf" target="_blank">📄 ch01.pdf</a>
+            <a class="file-link" href="./ch02.pdf" target="_blank">📄 ch02.pdf</a>
+            <a class="file-link" href="./ch03.pdf" target="_blank">📄 ch03.pdf</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/7 (六)</td>
+          <td>空運物流作業管理</td>
+          <td>Openbook 抽考題庫</td>
+          <td><a class="file-link" href="./空運物流作業管理 期中考題庫與答案.pdf" target="_blank">📄 空運物流作業管理 期中考題庫與答案.pdf</a></td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/7 (六)</td>
+          <td>民航法規</td>
+          <td>讀書心得</td>
+          <td><a class="file-link" href="./借閱圖書心得寫作格式.docx" download>📥 借閱圖書心得寫作格式.docx</a></td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/7 (六)</td>
+          <td>通關實務</td>
+          <td>Openbook 抽考題庫</td>
+          <td><a class="file-link" href="./通關實務期中考題庫與答案.pdf" target="_blank">📄 通關實務期中考題庫與答案.pdf</a></td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/7 (六)</td>
+          <td>載貨證券</td>
+          <td>Openbook</td>
+          <td><a class="file-link" href="./answer.pdf" target="_blank">📄 answer.pdf</a></td>
+        </tr>
+        <tr>
+          <td class="badge-date">11/7 (六)</td>
+          <td>散裝航運實務</td>
+          <td>Openbook</td>
+          <td style="color: #8c959f;">（暫無指定檔案）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>📖 題庫與講義線上即時預覽</h2>
+  <div class="preview-card">
+    <div class="selector-bar">
+      <label for="pdfSelect"><strong>切換預覽檔案：</strong></label>
+      <select id="pdfSelect" onchange="switchPdf(this.value)">
+        <option value="./空運物流作業管理 期中考題庫與答案.pdf">空運物流作業管理 期中考題庫與答案.pdf</option>
+        <option value="./通關實務期中考題庫與答案.pdf">通關實務期中考題庫與答案.pdf</option>
+        <option value="./answer.pdf">載貨證券 / 題庫解答 (answer.pdf)</option>
+        <option value="./ch01.pdf">網路行銷 - ch01.pdf</option>
+        <option value="./ch02.pdf">網路行銷 - ch02.pdf</option>
+        <option value="./ch03.pdf">網路行銷 - ch03.pdf</option>
+      </select>
+    </div>
+
+    <iframe id="viewerFrame" src="./空運物流作業管理 期中考題庫與答案.pdf"></iframe>
+  </div>
+</div>
+
+<script>
+  function switchPdf(targetUrl) {
+    document.getElementById('viewerFrame').src = targetUrl;
+  }
+</script>
+
+</body>
+</html>

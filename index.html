@@ -173,7 +173,6 @@
           <td>網路行銷</td>
           <td>線上考試 (30 題抽 20 題)</td>
           <td>
-            <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./answer.pdf')">📄 考試答案 (answer.pdf)</a><br>
             <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch01.pdf')">📄 ch01.pdf</a>
             <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch02.pdf')">📄 ch02.pdf</a>
             <a class="file-link" href="javascript:void(0)" onclick="loadPdf('./ch03.pdf')">📄 ch03.pdf</a>
@@ -218,7 +217,6 @@
     <div class="selector-bar">
       <label for="pdfSelect"><strong>選擇切換檔案：</strong></label>
       <select id="pdfSelect" onchange="loadPdf(this.value)">
-        <option value="./answer.pdf">網路行銷 - 考試答案 (answer.pdf)</option>
         <option value="./ch01.pdf">網路行銷 - ch01.pdf</option>
         <option value="./ch02.pdf">網路行銷 - ch02.pdf</option>
         <option value="./ch03.pdf">網路行銷 - ch03.pdf</option>
@@ -282,7 +280,7 @@
   }
 
   window.onload = function() {
-    loadPdf('./answer.pdf');
+    loadPdf('./ch01.pdf');
   };
 </script>
 

@@ -70,6 +70,7 @@
       text-decoration: none;
       display: inline-block;
       margin-right: 6px;
+      margin-bottom: 4px;
       font-weight: 500;
     }
     .file-link:hover {
@@ -104,7 +105,7 @@
       border: 1px solid #d0d7de;
       background: #fff;
       cursor: pointer;
-      min-width: 280px;
+      min-width: 320px;
     }
     iframe {
       width: 100%;
@@ -155,6 +156,7 @@
           <td>網路行銷</td>
           <td>線上考試 (30 題抽 20 題)</td>
           <td>
+            <a class="file-link" href="./answer.pdf" target="_blank">📄 考試答案 (answer.pdf)</a><br>
             <a class="file-link" href="./ch01.pdf" target="_blank">📄 ch01.pdf</a>
             <a class="file-link" href="./ch02.pdf" target="_blank">📄 ch02.pdf</a>
             <a class="file-link" href="./ch03.pdf" target="_blank">📄 ch03.pdf</a>
@@ -182,7 +184,7 @@
           <td class="badge-date">11/7 (六)</td>
           <td>載貨證券</td>
           <td>Openbook</td>
-          <td><a class="file-link" href="./answer.pdf" target="_blank">📄 answer.pdf</a></td>
+          <td style="color: #8c959f;">（暫無指定檔案）</td>
         </tr>
         <tr>
           <td class="badge-date">11/7 (六)</td>
@@ -199,16 +201,16 @@
     <div class="selector-bar">
       <label for="pdfSelect"><strong>切換預覽檔案：</strong></label>
       <select id="pdfSelect" onchange="switchPdf(this.value)">
-        <option value="./空運物流作業管理 期中考題庫與答案.pdf">空運物流作業管理 期中考題庫與答案.pdf</option>
-        <option value="./通關實務期中考題庫與答案.pdf">通關實務期中考題庫與答案.pdf</option>
-        <option value="./answer.pdf">載貨證券 / 題庫解答 (answer.pdf)</option>
+        <option value="./answer.pdf">網路行銷 - 考試答案 (answer.pdf)</option>
         <option value="./ch01.pdf">網路行銷 - ch01.pdf</option>
         <option value="./ch02.pdf">網路行銷 - ch02.pdf</option>
         <option value="./ch03.pdf">網路行銷 - ch03.pdf</option>
+        <option value="./空運物流作業管理 期中考題庫與答案.pdf">空運物流作業管理 期中考題庫與答案.pdf</option>
+        <option value="./通關實務期中考題庫與答案.pdf">通關實務期中考題庫與答案.pdf</option>
       </select>
     </div>
 
-    <iframe id="viewerFrame" src="./空運物流作業管理 期中考題庫與答案.pdf"></iframe>
+    <iframe id="viewerFrame" src="./answer.pdf"></iframe>
   </div>
 </div>
 
